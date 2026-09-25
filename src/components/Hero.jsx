@@ -51,7 +51,7 @@ export const Hero = () => {
   const springMouseX = useSpring(mouseOffset.x * 15, { stiffness: 180, damping: 20 });
   const springMouseY = useSpring(mouseOffset.y * -15, { stiffness: 180, damping: 20 });
 
-  // Spring physics for drag displacement (pure spring without jumping)
+  // Spring physics for drag displacement
   const springDragX = useSpring(dragX, { stiffness: 180, damping: 20 });
   const springDragY = useSpring(dragY, { stiffness: 180, damping: 20 });
   const springRotateX = useSpring(currentRotateX, { stiffness: 120, damping: 18 });
@@ -71,7 +71,7 @@ export const Hero = () => {
     const deltaX = e.clientX - pointerStartRef.current.x;
     const deltaY = e.clientY - pointerStartRef.current.y;
 
-    // Subtle position displacement (slight tactile stretch)
+    // Subtle position displacement
     dragX.set(deltaX * 0.12);
     dragY.set(deltaY * 0.12);
 
@@ -218,6 +218,7 @@ export const Hero = () => {
 IBROHIMBEK - SENIOR FRONTEND ENGINEER & UI CRAFTSMAN
 ================================================
 Email: ${PERSONAL_INFO.email}
+Phone: ${PERSONAL_INFO.phone}
 Location: ${PERSONAL_INFO.location}
 Experience: ${PERSONAL_INFO.yearsExperience} Years
 Completed Projects: ${PERSONAL_INFO.completedProjects}
@@ -236,6 +237,7 @@ LINKS:
 GitHub: ${PERSONAL_INFO.github}
 LinkedIn: ${PERSONAL_INFO.linkedin}
 Telegram: ${PERSONAL_INFO.telegram}
+Instagram: ${PERSONAL_INFO.instagram}
 ================================================`;
 
       const blob = new Blob([cvContent], { type: 'text/plain;charset=utf-8' });
@@ -251,7 +253,7 @@ Telegram: ${PERSONAL_INFO.telegram}
     }, 600);
   };
 
-  // Combine transforms: when dragging, rotation follows drag delta; when hovering, follows mouse tilt
+  // Combine transforms
   const finalRotateX = isDragging ? springRotateX : springMouseY;
   const finalRotateY = isDragging ? springRotateY : springMouseX;
 
@@ -352,7 +354,7 @@ Telegram: ${PERSONAL_INFO.telegram}
               className="absolute inset-4 rounded-[40px] opacity-80 blur-2xl -z-10 pointer-events-none"
             />
 
-            {/* 3D Dynamic Spin & Slight Drag Card */}
+            {/* 3D Dynamic Spin & Slight Drag Card - Pure Clear Outer Frame */}
             <motion.div
               style={{
                 x: springDragX,
@@ -362,12 +364,12 @@ Telegram: ${PERSONAL_INFO.telegram}
                 scale,
                 transformStyle: 'preserve-3d',
               }}
-              className="relative w-full rounded-[32px] p-2.5 bg-gradient-to-tr from-white/15 via-white/5 to-white/10 backdrop-blur-2xl border border-white/20 shadow-2xl transition-shadow duration-300 hover:shadow-indigo-500/25 select-none"
+              className="relative w-full rounded-[32px] p-2 bg-slate-900/90 border border-white/20 shadow-2xl transition-shadow duration-300 hover:shadow-indigo-500/30 select-none overflow-hidden"
             >
               {/* Inner Double-Sided Container */}
               <div 
                 style={{ transformStyle: 'preserve-3d' }}
-                className="relative h-[380px] sm:h-[400px] rounded-[24px] overflow-hidden bg-slate-950 flex flex-col justify-between"
+                className="relative h-[400px] rounded-[24px] overflow-hidden bg-slate-950 flex flex-col justify-between"
               >
                 
                 {/* --- FRONT SIDE (0 deg) --- */}
@@ -375,19 +377,13 @@ Telegram: ${PERSONAL_INFO.telegram}
                   style={{ backfaceVisibility: 'hidden' }} 
                   className="absolute inset-0 w-full h-full flex flex-col justify-between pointer-events-none"
                 >
-                  {/* Visual Background Image - Crystal Clear */}
-                  <motion.img
+                  {/* Visual Background Image - 100% Crisp & Clean */}
+                  <img
                     key={`front-${current.frontImage}`}
-                    initial={{ opacity: 0.9, scale: 1.05 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.4 }}
                     src={current.frontImage}
                     alt={current.title}
                     className="absolute inset-0 w-full h-full object-cover object-top"
                   />
-
-                  {/* Gentle Bottom-Only Gradient for Text Readability without blurring face */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/20 to-transparent pointer-events-none" />
 
                   {/* Top Bar: Badge + 3D Spin Hint */}
                   <div className="relative z-10 p-4 flex items-center justify-between pointer-events-auto">
@@ -395,7 +391,7 @@ Telegram: ${PERSONAL_INFO.telegram}
                       key={current.badge}
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
-                      className={`px-3 py-1.5 rounded-full text-xs font-semibold backdrop-blur-md border ${current.badgeColor}`}
+                      className={`px-3 py-1.5 rounded-full text-xs font-semibold backdrop-blur-md border ${current.badgeColor} shadow-md`}
                     >
                       <span className="flex items-center gap-1.5">
                         <CurrentIcon className="w-3.5 h-3.5" />
@@ -403,21 +399,21 @@ Telegram: ${PERSONAL_INFO.telegram}
                       </span>
                     </motion.div>
 
-                    <div className="px-2.5 py-1.5 rounded-full bg-slate-900/80 backdrop-blur-md border border-white/10 text-white/90 text-[10px] font-mono flex items-center gap-1.5 shadow-lg">
+                    <div className="px-2.5 py-1.5 rounded-full bg-slate-950/80 backdrop-blur-md border border-white/15 text-white/90 text-[10px] font-mono flex items-center gap-1.5 shadow-lg">
                       <RotateCw className="w-3 h-3 text-indigo-400" />
                       <span>Ushlab aylantiring</span>
                     </div>
                   </div>
 
-                  {/* Bottom Area: Info + Download CV Button */}
-                  <div className="relative z-10 p-5 bg-gradient-to-t from-slate-950 via-slate-950/90 to-transparent pt-8 pointer-events-auto">
-                    <div className="text-xs font-mono text-indigo-300 font-semibold tracking-wider uppercase mb-1">
+                  {/* Bottom Area: Info + Download CV Button with localized backdrop */}
+                  <div className="relative z-10 p-4 bg-gradient-to-t from-slate-950 via-slate-950/90 to-transparent pt-6 pointer-events-auto">
+                    <div className="text-xs font-mono text-indigo-300 font-semibold tracking-wider uppercase mb-0.5">
                       {current.role}
                     </div>
-                    <h3 className="text-2xl font-black text-white tracking-tight mb-1">
+                    <h3 className="text-xl font-black text-white tracking-tight mb-0.5">
                       {current.title}
                     </h3>
-                    <p className="text-xs text-slate-300 italic opacity-90 line-clamp-1 mb-4">
+                    <p className="text-xs text-slate-300 italic opacity-90 line-clamp-1 mb-3">
                       "{current.quote}"
                     </p>
 
@@ -427,7 +423,7 @@ Telegram: ${PERSONAL_INFO.telegram}
                       disabled={downloading}
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
-                      className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 hover:opacity-95 text-white font-bold text-xs sm:text-sm shadow-xl shadow-indigo-600/30 flex items-center justify-center gap-2 transition-all cursor-pointer"
+                      className="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 hover:opacity-95 text-white font-bold text-xs sm:text-sm shadow-xl shadow-indigo-600/30 flex items-center justify-center gap-2 transition-all cursor-pointer"
                     >
                       {downloading ? (
                         <span className="flex items-center gap-2">
@@ -506,9 +502,6 @@ Telegram: ${PERSONAL_INFO.telegram}
                 </div>
 
               </div>
-
-              {/* Glass sheen reflection */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent pointer-events-none rounded-[36px]" />
             </motion.div>
 
             {/* Bottom Interactive Hint */}
