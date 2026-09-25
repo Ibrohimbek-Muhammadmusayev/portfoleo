@@ -341,20 +341,16 @@ Instagram: ${PERSONAL_INFO.instagram}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
             onPointerDown={handlePointerDown}
-            style={{ perspective: 1600 }} 
-            className="relative w-full max-w-sm min-h-[420px] flex items-center justify-center p-1 cursor-grab active:cursor-grabbing touch-none select-none"
+            style={{ perspective: 1400 }} 
+            className="relative w-full max-w-sm flex items-center justify-center p-1 cursor-grab active:cursor-grabbing touch-none select-none"
           >
             
-            {/* Dynamic Halo Glow */}
-            <motion.div
-              animate={{
-                boxShadow: `0 0 80px 20px ${current.glow}`,
-              }}
-              transition={{ duration: 0.6 }}
-              className="absolute inset-4 rounded-[40px] opacity-80 blur-2xl -z-10 pointer-events-none"
+            {/* Subtle Clean Ambient Halo */}
+            <div 
+              className="absolute inset-2 rounded-[36px] bg-indigo-500/20 blur-xl -z-10 pointer-events-none transition-all duration-500"
             />
 
-            {/* 3D Dynamic Spin & Slight Drag Card - Pure Clear Outer Frame */}
+            {/* 3D Dynamic Spin & Slight Drag Card - Clean Solid Sleek Container */}
             <motion.div
               style={{
                 x: springDragX,
@@ -364,12 +360,12 @@ Instagram: ${PERSONAL_INFO.instagram}
                 scale,
                 transformStyle: 'preserve-3d',
               }}
-              className="relative w-full rounded-[32px] p-2 bg-slate-900/90 border border-white/20 shadow-2xl transition-shadow duration-300 hover:shadow-indigo-500/30 select-none overflow-hidden"
+              className="relative w-full rounded-[30px] p-2 bg-slate-900 border border-indigo-500/30 shadow-2xl shadow-indigo-950/50 transition-shadow duration-300 hover:border-indigo-400/50 hover:shadow-indigo-500/20 select-none overflow-hidden"
             >
               {/* Inner Double-Sided Container */}
               <div 
                 style={{ transformStyle: 'preserve-3d' }}
-                className="relative h-[400px] rounded-[24px] overflow-hidden bg-slate-950 flex flex-col justify-between"
+                className="relative h-[410px] rounded-[22px] overflow-hidden bg-slate-950 flex flex-col justify-between"
               >
                 
                 {/* --- FRONT SIDE (0 deg) --- */}
@@ -377,21 +373,24 @@ Instagram: ${PERSONAL_INFO.instagram}
                   style={{ backfaceVisibility: 'hidden' }} 
                   className="absolute inset-0 w-full h-full flex flex-col justify-between pointer-events-none"
                 >
-                  {/* Visual Background Image - 100% Crisp & Clean */}
-                  <img
-                    key={`front-${current.frontImage}`}
-                    src={current.frontImage}
-                    alt={current.title}
-                    className="absolute inset-0 w-full h-full object-cover object-top"
-                  />
+                  {/* Photo Container - Pure, Bright, Crystal Clear & Sharpened */}
+                  <div className="absolute inset-0 w-full h-full bg-slate-950 overflow-hidden">
+                    <img
+                      key={`front-${current.frontImage}`}
+                      src={current.frontImage}
+                      alt={current.title}
+                      className="w-full h-full object-cover object-top filter brightness-105 contrast-105"
+                      loading="eager"
+                    />
+                  </div>
 
-                  {/* Top Bar: Badge + 3D Spin Hint */}
-                  <div className="relative z-10 p-4 flex items-center justify-between pointer-events-auto">
+                  {/* Top Bar: Clean Badge + 3D Spin Hint */}
+                  <div className="relative z-10 p-3.5 flex items-center justify-between pointer-events-auto">
                     <motion.div
                       key={current.badge}
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
-                      className={`px-3 py-1.5 rounded-full text-xs font-semibold backdrop-blur-md border ${current.badgeColor} shadow-md`}
+                      className={`px-3 py-1 rounded-full text-xs font-semibold backdrop-blur-md border ${current.badgeColor} shadow-md`}
                     >
                       <span className="flex items-center gap-1.5">
                         <CurrentIcon className="w-3.5 h-3.5" />
@@ -399,18 +398,18 @@ Instagram: ${PERSONAL_INFO.instagram}
                       </span>
                     </motion.div>
 
-                    <div className="px-2.5 py-1.5 rounded-full bg-slate-950/80 backdrop-blur-md border border-white/15 text-white/90 text-[10px] font-mono flex items-center gap-1.5 shadow-lg">
+                    <div className="px-2.5 py-1 rounded-full bg-slate-950/85 border border-white/20 text-white/90 text-[10px] font-mono flex items-center gap-1.5 shadow-lg">
                       <RotateCw className="w-3 h-3 text-indigo-400" />
-                      <span>Ushlab aylantiring</span>
+                      <span>Aylantirish</span>
                     </div>
                   </div>
 
-                  {/* Bottom Area: Info + Download CV Button with localized backdrop */}
-                  <div className="relative z-10 p-4 bg-gradient-to-t from-slate-950 via-slate-950/90 to-transparent pt-6 pointer-events-auto">
-                    <div className="text-xs font-mono text-indigo-300 font-semibold tracking-wider uppercase mb-0.5">
+                  {/* Bottom Area: Info Panel with Solid Gradient for Perfect Text Contrast */}
+                  <div className="relative z-10 p-4 bg-gradient-to-t from-slate-950 via-slate-950/85 to-transparent pt-8 pointer-events-auto">
+                    <div className="text-[11px] font-mono text-indigo-300 font-semibold tracking-wider uppercase mb-0.5">
                       {current.role}
                     </div>
-                    <h3 className="text-xl font-black text-white tracking-tight mb-0.5">
+                    <h3 className="text-xl font-bold text-white tracking-tight mb-0.5">
                       {current.title}
                     </h3>
                     <p className="text-xs text-slate-300 italic opacity-90 line-clamp-1 mb-3">
@@ -446,32 +445,32 @@ Instagram: ${PERSONAL_INFO.instagram}
                     backfaceVisibility: 'hidden',
                     transform: 'rotateY(180deg)'
                   }} 
-                  className="absolute inset-0 w-full h-full bg-slate-900 flex flex-col justify-between p-6"
+                  className="absolute inset-0 w-full h-full bg-slate-900 flex flex-col justify-between p-5"
                 >
                   <img
                     src={current.backImage}
                     alt={`${current.title} Back`}
-                    className="absolute inset-0 w-full h-full object-cover opacity-25 pointer-events-none"
+                    className="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none"
                   />
-                  <div className="absolute inset-0 bg-slate-950/80 backdrop-blur-sm pointer-events-none" />
+                  <div className="absolute inset-0 bg-slate-950/85 pointer-events-none" />
 
                   <div className="relative z-10 flex justify-between items-center">
                     <span className="px-3 py-1 rounded-full text-xs font-mono bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">
                       Orqa Tomon / Master Specs
                     </span>
-                    <span className="text-[10px] font-mono text-slate-300 bg-slate-800/80 px-2.5 py-1 rounded-full border border-white/10 flex items-center gap-1">
+                    <span className="text-[10px] font-mono text-slate-300 bg-slate-800/90 px-2.5 py-1 rounded-full border border-white/10 flex items-center gap-1">
                       <RotateCw className="w-3 h-3" /> 360° Aylanadi
                     </span>
                   </div>
 
-                  <div className="relative z-10 my-auto text-left space-y-3">
+                  <div className="relative z-10 my-auto text-left space-y-2.5">
                     <div className="text-xs font-mono text-pink-400 uppercase font-semibold">
                       // Frontend Texnik Ko'rsatkichlar
                     </div>
-                    <h4 className="text-xl font-bold text-white">
+                    <h4 className="text-lg font-bold text-white">
                       {current.title} Pro
                     </h4>
-                    <ul className="text-xs text-slate-300 space-y-2 font-mono">
+                    <ul className="text-xs text-slate-300 space-y-1.5 font-mono">
                       <li className="flex items-center gap-2">
                         <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 flex-shrink-0" />
                         <span>Ultra-fast 60+ FPS React render tizimi</span>
@@ -488,7 +487,7 @@ Instagram: ${PERSONAL_INFO.instagram}
                   </div>
 
                   {/* Back Download CV Option */}
-                  <div className="relative z-10 pt-3 border-t border-white/10">
+                  <div className="relative z-10 pt-2 border-t border-white/10">
                     <motion.button
                       onClick={handleDownloadCV}
                       whileHover={{ scale: 1.02 }}
@@ -505,14 +504,10 @@ Instagram: ${PERSONAL_INFO.instagram}
             </motion.div>
 
             {/* Bottom Interactive Hint */}
-            <div className="absolute -bottom-8 inset-x-0 text-center text-xs font-mono text-slate-400 flex items-center justify-center gap-2 pointer-events-none">
+            <div className="absolute -bottom-7 inset-x-0 text-center text-[11px] font-mono text-slate-400 flex items-center justify-center gap-2 pointer-events-none">
               <Hand className="w-3.5 h-3.5 text-indigo-400 animate-bounce" />
-              <span>Bosib torting: 3D aylanadi va qo'yib yuborganda sekinlashib joyiga qaytadi</span>
+              <span>Bosib torting: 3D aylanadi va qo'yib yuborganda joyiga qaytadi</span>
             </div>
-
-            {/* Ambient Background 3D Glow Orbs */}
-            <div className="absolute -bottom-6 -right-6 w-24 h-24 rounded-full bg-gradient-to-tr from-pink-500 to-purple-600 opacity-50 blur-2xl animate-pulse pointer-events-none" />
-            <div className="absolute -top-6 -left-6 w-24 h-24 rounded-full bg-gradient-to-tr from-cyan-500 to-blue-600 opacity-50 blur-2xl animate-pulse pointer-events-none delay-700" />
           </div>
         </div>
 
