@@ -24,7 +24,7 @@ export const Experience = () => {
           transition={{ delay: 0.1 }}
           className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight"
         >
-          Ish <span className="text-gradient-cyan">Tajribasi</span>
+          Tajriba & <span className="text-gradient-cyan">Faoliyat Yo'li</span>
         </motion.h2>
 
         <motion.p
@@ -34,7 +34,7 @@ export const Experience = () => {
           transition={{ delay: 0.2 }}
           className="text-slate-400 mt-4 text-base sm:text-lg"
         >
-          Kompaniyalar, startaplar va xalqaro mijozlar bilan erishilgan amaliy yutuqlar.
+          2023-yildan dasturlashni boshlab, 2024-yilda bitirganimdan buyon startaplar uchun mustaqil dasturiy ta'minotlar yaratish bo'yicha ishlab kelmoqdaman.
         </motion.p>
       </div>
 

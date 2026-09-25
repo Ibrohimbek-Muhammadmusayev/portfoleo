@@ -63,7 +63,7 @@ export const Navbar = () => {
             <span className="font-bold text-slate-100 text-base tracking-tight flex items-center gap-1.5 group-hover:text-indigo-400 transition-colors">
               {PERSONAL_INFO.name}
             </span>
-            <span className="text-[10px] text-slate-400 font-mono tracking-wider uppercase">Senior Frontend</span>
+            <span className="text-[10px] text-slate-400 font-mono tracking-wider uppercase">Fullstack & AI Dev</span>
           </div>
         </a>
 

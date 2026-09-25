@@ -52,7 +52,7 @@ export const Skills = () => {
           transition={{ delay: 0.2 }}
           className="text-slate-400 mt-4 text-base sm:text-lg"
         >
-          Eng so'nggi va ishonchli web texnologiyalari yordamida tezkor, barqaror va xavfsiz ilovalar qura olaman.
+          Vibe Coding, AI agentlar, Frontend, Backend, Mobil ilovalar va Telegram botlar bo'yicha kuchli ko'nikmalar to'plami.
         </motion.p>
       </div>
 

@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform, useSpring, useMotionValue, animate } f
 import { 
   Sparkles, Code2, FolderGit2, Briefcase, MessageSquare, 
   Layers, Terminal, Zap, ArrowRight, ExternalLink, Cpu, Atom,
-  RotateCw, Hand, Download, MapPin, Mail, CheckCircle2, Move
+  RotateCw, Hand, Download, MapPin, Mail, CheckCircle2, Move, Flame
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { PERSONAL_INFO } from '../data/portfolioData';
@@ -123,64 +123,64 @@ export const Hero = () => {
 
   const [activeStageIndex, setActiveStageIndex] = useState(0);
 
-  // 5 Section Morphing States
+  // 5 Section Morphing States for Startups, Fullstack, AI & Bots
   const stages = [
     {
       id: "hero",
       title: "Ibrohimbek",
-      role: "Senior Frontend Engineer & UI Craftsman",
-      quote: "Transforming vision into pixel-perfect reality",
+      role: "Fullstack & AI Software Engineer",
+      quote: "Vibe coding, AI arxitekturasi va yangi startaplar yaratuvchisi",
       frontImage: "/ibrohimbek.jpg",
       backImage: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80",
-      badge: "🚀 Available for Top Projects",
+      badge: "🚀 Startaplar Dasturchisi",
       badgeColor: "border-indigo-500/40 text-indigo-300 bg-indigo-500/10",
       glow: "rgba(99, 102, 241, 0.4)",
       icon: Sparkles
     },
     {
       id: "skills",
-      title: "Tech Arsenal",
-      role: "React 19 • TypeScript • Tailwind • Next.js",
-      quote: "Scalable, blazing-fast frontend architecture",
+      title: "AI & Modern Stack",
+      role: "Prompt Eng • React • Node.js • Bots • Python",
+      quote: "Tezkor, sifatli va zamonaviy dasturiy ta'minot",
       frontImage: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80",
       backImage: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80",
-      badge: "⚡ 99/100 Lighthouse Speed",
+      badge: "⚡ Vibe Coding & LLM APIs",
       badgeColor: "border-cyan-500/40 text-cyan-300 bg-cyan-500/10",
       glow: "rgba(6, 182, 212, 0.4)",
       icon: Atom
     },
     {
       id: "projects",
-      title: "Engineered Vault",
-      role: "SaaS • Fintech Platforms • 3D E-Commerce",
-      quote: "Built for speed, user delight & high conversion",
+      title: "Startap Loyihalar",
+      role: "SaaS • AI Platformalar • Telegram CRM • Mobil",
+      quote: "Biznesni rivojlantiruvchi amaliy dasturlar",
       frontImage: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80",
       backImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
-      badge: "💎 35+ Production Deployments",
+      badge: "💎 25+ Amalga Oshirilgan Loyiha",
       badgeColor: "border-pink-500/40 text-pink-300 bg-pink-500/10",
       glow: "rgba(236, 72, 153, 0.4)",
       icon: FolderGit2
     },
     {
       id: "experience",
-      title: "Proven Mastery",
-      role: "Senior Developer • Tech Lead • Mentor",
-      quote: "Delivering world-class codebases across teams",
+      title: "Tajriba & Yo'nalish",
+      role: "2023–2024 Ta'lim • 2024-Hozir Startup Builder",
+      quote: "Startaplarni MVP bosqichidan to'liq ishga tushirishgacha",
       frontImage: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80",
       backImage: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80",
-      badge: "💼 3+ Years Track Record",
+      badge: "💼 Startup Architect",
       badgeColor: "border-emerald-500/40 text-emerald-300 bg-emerald-500/10",
       glow: "rgba(168, 85, 247, 0.4)",
       icon: Briefcase
     },
     {
       id: "contact",
-      title: "Let's Collaborate",
-      role: "Available for Direct Projects & Contracts",
-      quote: "Ready to launch your next big idea",
+      title: "Hamkorlik & Loyiha",
+      role: "Yangi Startap & Buyurtmalar Uchun Ochiq",
+      quote: "G'oyalaringizni real ishlaydigan dasturga aylantiramiz",
       frontImage: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80",
       backImage: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80",
-      badge: "✨ Instant Collaboration",
+      badge: "✨ Tezkor Aloqa 24/7",
       badgeColor: "border-purple-500/40 text-purple-300 bg-purple-500/10",
       glow: "rgba(168, 85, 247, 0.4)",
       icon: MessageSquare
@@ -215,12 +215,12 @@ export const Hero = () => {
 
     setTimeout(() => {
       const cvContent = `================================================
-IBROHIMBEK - SENIOR FRONTEND ENGINEER & UI CRAFTSMAN
+IBROHIMBEK - FULLSTACK & AI SOFTWARE ENGINEER
 ================================================
 Email: ${PERSONAL_INFO.email}
 Phone: ${PERSONAL_INFO.phone}
 Location: ${PERSONAL_INFO.location}
-Experience: ${PERSONAL_INFO.yearsExperience} Years
+Experience: ${PERSONAL_INFO.yearsExperience} Years (2023–2024 Intensive Education, 2024–Present Startup Engineer)
 Completed Projects: ${PERSONAL_INFO.completedProjects}
 Satisfied Clients: ${PERSONAL_INFO.satisfiedClients}
 
@@ -228,10 +228,11 @@ SUMMARY:
 ${PERSONAL_INFO.bio}
 
 CORE SKILLS:
-- React.js / Next.js / TypeScript / JavaScript (ES6+)
-- Tailwind CSS / Framer Motion / Three.js / GSAP
-- Redux Toolkit / Zustand / TanStack Query
-- High-Performance UI, Micro-frontends & Responsive Architecture
+- Vibe Coding & Prompt Engineering (Cursor, Windsurf, LLM APIs, AI Workflows)
+- Frontend: React.js, Next.js, TypeScript, JavaScript (ES6+), Tailwind CSS, Framer Motion
+- Backend & Bots: Node.js, Express, Python, Telegram Bot API, REST APIs, WebSockets, Databases
+- Mobile & Cross-Platform: React Native basics & Multi-platform integrations
+- Startup Engineering: MVP Development, Rapid Prototyping, Production Architecture
 
 LINKS:
 GitHub: ${PERSONAL_INFO.github}
@@ -244,7 +245,7 @@ Instagram: ${PERSONAL_INFO.instagram}
       const url = URL.createObjectURL(blob);
       const link = document.createElement('a');
       link.href = url;
-      link.download = `Ibrohimbek_Frontend_Developer_Resume.txt`;
+      link.download = `Ibrohimbek_Software_Engineer_Resume.txt`;
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
@@ -274,8 +275,8 @@ Instagram: ${PERSONAL_INFO.instagram}
             <span className="text-gradient underline decoration-indigo-500/40 decoration-wavy">
               {PERSONAL_INFO.name}
             </span>. <br />
-            <span className="text-slate-200">Zamonaviy va 3D</span> <br />
-            <span className="text-gradient-cyan">Frontend Veb Loyihalar</span>
+            <span className="text-slate-200">Fullstack, AI &</span> <br />
+            <span className="text-gradient-cyan">Startap Dasturchiman</span>
           </motion.h1>
 
           <motion.p
@@ -284,7 +285,7 @@ Instagram: ${PERSONAL_INFO.instagram}
             transition={{ duration: 0.7, delay: 0.2 }}
             className="text-sm sm:text-base text-slate-400 max-w-xl mx-auto lg:mx-0 mb-6 leading-relaxed"
           >
-            {PERSONAL_INFO.bio} Yuqori darajadagi UI/UX, interaktiv animatsiyalar va pixel-perfect kod bilan biznesingizni yangi bosqichga olib chiqaman.
+            Vibe Coding, Prompt Engineering va AI yordamida zamonaviy dasturiy ta'minotlar yarataman. Frontend, Backend, Telegram botlar va Startap loyihalar arxitekturasini noldan tuzib beraman.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -298,7 +299,7 @@ Instagram: ${PERSONAL_INFO.instagram}
               href="#projects"
               className="group px-7 py-3.5 rounded-full bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white font-semibold text-sm sm:text-base shadow-xl shadow-indigo-600/30 hover:shadow-indigo-600/50 hover:scale-105 active:scale-95 transition-all duration-300 flex items-center gap-2.5"
             >
-              <span>Loyihalarni ko'rish</span>
+              <span>Startap Loyihalar</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </a>
 
@@ -307,7 +308,7 @@ Instagram: ${PERSONAL_INFO.instagram}
               className="px-7 py-3.5 rounded-full glass border border-slate-700 hover:border-slate-500 text-slate-200 font-semibold text-sm sm:text-base hover:bg-slate-800/60 hover:scale-105 active:scale-95 transition-all duration-300 flex items-center gap-2 shadow-lg"
             >
               <Terminal className="w-4 h-4 text-indigo-400" />
-              <span>Aloqaga chiqish</span>
+              <span>Loyiha Buyurtma Qilish</span>
             </a>
           </motion.div>
 
@@ -319,8 +320,8 @@ Instagram: ${PERSONAL_INFO.instagram}
             className="mt-6 pt-5 border-t border-white/10 grid grid-cols-3 gap-3 text-center lg:text-left max-w-md"
           >
             <div>
-              <div className="text-xl sm:text-2xl font-extrabold text-white font-mono">{PERSONAL_INFO.yearsExperience}</div>
-              <div className="text-[11px] text-slate-400 mt-0.5">Yillik Tajriba</div>
+              <div className="text-xl sm:text-2xl font-extrabold text-white font-mono">2023+</div>
+              <div className="text-[11px] text-slate-400 mt-0.5">O'qish & Tajriba</div>
             </div>
             <div>
               <div className="text-xl sm:text-2xl font-extrabold text-gradient font-mono">{PERSONAL_INFO.completedProjects}</div>
@@ -328,7 +329,7 @@ Instagram: ${PERSONAL_INFO.instagram}
             </div>
             <div>
               <div className="text-xl sm:text-2xl font-extrabold text-cyan-400 font-mono">100%</div>
-              <div className="text-[11px] text-slate-400 mt-0.5">Mijoz Qoniqishi</div>
+              <div className="text-[11px] text-slate-400 mt-0.5">Tezlik & Sifat</div>
             </div>
           </motion.div>
         </div>
@@ -465,23 +466,23 @@ Instagram: ${PERSONAL_INFO.instagram}
 
                   <div className="relative z-10 my-auto text-left space-y-2.5">
                     <div className="text-xs font-mono text-pink-400 uppercase font-semibold">
-                      // Frontend Texnik Ko'rsatkichlar
+                      // AI, Startap & Dasturiy Ta'minot
                     </div>
                     <h4 className="text-lg font-bold text-white">
-                      {current.title} Pro
+                      {current.title} Engine
                     </h4>
                     <ul className="text-xs text-slate-300 space-y-1.5 font-mono">
                       <li className="flex items-center gap-2">
                         <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 flex-shrink-0" />
-                        <span>Ultra-fast 60+ FPS React render tizimi</span>
+                        <span>Vibe Coding & Prompt Engineering bilan tezkor ish</span>
                       </li>
                       <li className="flex items-center gap-2">
                         <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 flex-shrink-0" />
-                        <span>Elastik 3D Inersiya & Tortilish Fizikasi</span>
+                        <span>Frontend, Backend, Telegram botlar & Mobil</span>
                       </li>
                       <li className="flex items-center gap-2">
                         <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 flex-shrink-0" />
-                        <span>Figma Pixel-Perfect UI/UX Architecture</span>
+                        <span>Startaplar uchun MVP va to'liq arxitektura</span>
                       </li>
                     </ul>
                   </div>

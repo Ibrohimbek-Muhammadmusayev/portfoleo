@@ -13,7 +13,7 @@ const GithubIcon = ({ className = "w-4 h-4" }) => (
 export const Projects = () => {
   const [filter, setFilter] = useState('All');
 
-  const filterOptions = ['All', 'Full Frontend / SaaS', 'Fintech / Web App', 'E-Commerce', 'Developer Tool', 'Open Source / Design System'];
+  const filterOptions = ['All', 'AI & SaaS Startup', 'Telegram Bot & Backend', 'Fintech & Web App', 'Mobile & Fullstack', 'Developer Tool', 'Open Source / UI Library'];
 
   const filteredProjects = filter === 'All'
     ? PROJECTS
