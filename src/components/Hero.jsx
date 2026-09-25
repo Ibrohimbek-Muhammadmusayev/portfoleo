@@ -375,19 +375,19 @@ Telegram: ${PERSONAL_INFO.telegram}
                   style={{ backfaceVisibility: 'hidden' }} 
                   className="absolute inset-0 w-full h-full flex flex-col justify-between pointer-events-none"
                 >
-                  {/* Visual Background Image */}
+                  {/* Visual Background Image - Crystal Clear */}
                   <motion.img
                     key={`front-${current.frontImage}`}
-                    initial={{ opacity: 0.4, scale: 1.1 }}
+                    initial={{ opacity: 0.9, scale: 1.05 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.6 }}
+                    transition={{ duration: 0.4 }}
                     src={current.frontImage}
                     alt={current.title}
-                    className="absolute inset-0 w-full h-full object-cover"
+                    className="absolute inset-0 w-full h-full object-cover object-top"
                   />
 
-                  {/* Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
+                  {/* Gentle Bottom-Only Gradient for Text Readability without blurring face */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/20 to-transparent pointer-events-none" />
 
                   {/* Top Bar: Badge + 3D Spin Hint */}
                   <div className="relative z-10 p-4 flex items-center justify-between pointer-events-auto">
