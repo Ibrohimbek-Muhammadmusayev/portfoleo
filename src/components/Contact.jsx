@@ -44,7 +44,7 @@ export const Contact = () => {
     setErrorMessage('');
 
     const botToken = import.meta.env.VITE_TELEGRAM_BOT_TOKEN || '8239984350:AAE7h0sBs3Gqm78-LymjXEOmVMtfFz-ffOQ';
-    const chatId = import.meta.env.VITE_TELEGRAM_CHAT_ID;
+    const chatId = import.meta.env.VITE_TELEGRAM_CHAT_ID || '6481018655';
 
     // Telegram HTML formatted message
     const telegramText = `⚡ <b>Yangi Portfolio Murojaati!</b>\n\n` +
