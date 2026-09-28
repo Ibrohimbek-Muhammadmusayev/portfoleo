@@ -9,7 +9,7 @@ export const PERSONAL_INFO = {
   instagram: "https://www.instagram.com/ibrohimbek_officials/",
   linkedin: "https://www.linkedin.com/in/ibrohimbek-muhammadmusayev-7b8b022a9/",
   telegram: "https://t.me/Ibrohimbek_enginer",
-  resumeUrl: "#",
+  resumeUrl: "/I.Muhammadmusayev.pdf",
   yearsExperience: "2+",
   completedProjects: "25+",
   satisfiedClients: "20+",

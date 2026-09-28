@@ -214,44 +214,15 @@ export const Hero = () => {
     });
 
     setTimeout(() => {
-      const cvContent = `================================================
-IBROHIMBEK - FULLSTACK & AI SOFTWARE ENGINEER
-================================================
-Email: ${PERSONAL_INFO.email}
-Phone: ${PERSONAL_INFO.phone}
-Location: ${PERSONAL_INFO.location}
-Experience: ${PERSONAL_INFO.yearsExperience} Years (2023–2024 Intensive Education, 2024–Present Startup Engineer)
-Completed Projects: ${PERSONAL_INFO.completedProjects}
-Satisfied Clients: ${PERSONAL_INFO.satisfiedClients}
-
-SUMMARY:
-${PERSONAL_INFO.bio}
-
-CORE SKILLS:
-- Vibe Coding & Prompt Engineering (Cursor, Windsurf, LLM APIs, AI Workflows)
-- Frontend: React.js, Next.js, TypeScript, JavaScript (ES6+), Tailwind CSS, Framer Motion
-- Backend & Bots: Node.js, Express, Python, Telegram Bot API, REST APIs, WebSockets, Databases
-- Mobile & Cross-Platform: React Native basics & Multi-platform integrations
-- Startup Engineering: MVP Development, Rapid Prototyping, Production Architecture
-
-LINKS:
-GitHub: ${PERSONAL_INFO.github}
-LinkedIn: ${PERSONAL_INFO.linkedin}
-Telegram: ${PERSONAL_INFO.telegram}
-Instagram: ${PERSONAL_INFO.instagram}
-================================================`;
-
-      const blob = new Blob([cvContent], { type: 'text/plain;charset=utf-8' });
-      const url = URL.createObjectURL(blob);
       const link = document.createElement('a');
-      link.href = url;
-      link.download = `Ibrohimbek_Software_Engineer_Resume.txt`;
+      link.href = PERSONAL_INFO.resumeUrl || '/I.Muhammadmusayev.pdf';
+      link.download = 'I.Muhammadmusayev.pdf';
+      link.target = '_blank';
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
-      URL.revokeObjectURL(url);
       setDownloading(false);
-    }, 600);
+    }, 400);
   };
 
   // Combine transforms

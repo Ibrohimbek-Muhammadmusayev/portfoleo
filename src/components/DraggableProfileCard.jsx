@@ -37,42 +37,15 @@ export const DraggableProfileCard = () => {
     });
 
     setTimeout(() => {
-      // Create and download a structured CV summary text file as sample resume
-      const cvContent = `================================================
-IBROHIMBEK - SENIOR FRONTEND ENGINEER & UI CRAFTSMAN
-================================================
-Email: ${PERSONAL_INFO.email}
-Location: ${PERSONAL_INFO.location}
-Experience: ${PERSONAL_INFO.yearsExperience} Years
-Completed Projects: ${PERSONAL_INFO.completedProjects}
-Satisfied Clients: ${PERSONAL_INFO.satisfiedClients}
-
-SUMMARY:
-${PERSONAL_INFO.bio}
-
-CORE SKILLS:
-- React.js / Next.js / TypeScript / JavaScript (ES6+)
-- Tailwind CSS / Framer Motion / Three.js / GSAP
-- Redux Toolkit / Zustand / TanStack Query (React Query)
-- WebSockets / REST APIs / Responsive & Performance Optimization
-
-CONTACT & SOCIAL:
-GitHub: ${PERSONAL_INFO.github}
-LinkedIn: ${PERSONAL_INFO.linkedin}
-Telegram: ${PERSONAL_INFO.telegram}
-================================================`;
-
-      const blob = new Blob([cvContent], { type: 'text/plain;charset=utf-8' });
-      const url = URL.createObjectURL(blob);
       const link = document.createElement('a');
-      link.href = url;
-      link.download = `Ibrohimbek_Frontend_Developer_Resume.txt`;
+      link.href = PERSONAL_INFO.resumeUrl || '/I.Muhammadmusayev.pdf';
+      link.download = 'I.Muhammadmusayev.pdf';
+      link.target = '_blank';
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
-      URL.revokeObjectURL(url);
       setDownloading(false);
-    }, 600);
+    }, 400);
   };
 
   return (
